@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCPH Reading Club</title>
+</head>
+<body>
+    {% for review in reviews %}
+        {{ review.review_title }}<br>
+        {{ review.review_author }}<br>
+        {{ review.review_genre }}<br>
+        {{ review.review_language }}<br>
+        {{ review.review_text }}<br>
+    {% endfor %}
+</body>
+</html>
