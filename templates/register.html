@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content%}
+
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="card">
+                        <div class="card-image">
+                        <img src="static/images/register_pic.jpg">
+                        <span class="card-title">Register to share your best reads</span>
+                        </div>
+            <form class="card-content" method="POST" action= "{{ url_for('register') }}">
+
+                <!-- first and last name-->        
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                        <input id="first_name" name="first_name" type="text" class="validate">
+                        <label for="first_name">First Name</label>
+                        </div>
+                        <div class="input-field col s6">
+                        <input id="last_name" name="last_name" type="text" class="validate">
+                        <label for="last_name">Last Name</label>
+                        </div>
+                    </div>
+                <!-- password -->
+                <div class="row">
+                    <div class="input-field col s12">
+                    <input id="password" name="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                    </div>
+                </div>
+                <!-- email -->
+                <div class="row">
+                    <div class="input-field col s12">
+                    <input id="email" name="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                    </div>
+                </div>
+                <!-- register button-->
+                <div class="row">
+                    <button type="submit" class= "col s12 btn-large grey darken-2">
+                        Register
+                    </button>
+                </div>
+            </form>  
+        </form>
+    </div>
+</div>
+
+{% endblock %}
