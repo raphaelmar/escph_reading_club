@@ -12,3 +12,8 @@ nav {
 .logo {
     padding: 5px;
 }
+
+.flashes h4 {
+    line-height: 2;
+    color: whitesmoke;
+}
