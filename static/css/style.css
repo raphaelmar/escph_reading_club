@@ -1,3 +1,14 @@
 body {
-    background-color: rgb(211, 209, 195);
+    background-color: #e2dee0;
+}
+nav {
+    background-color: #8b8f77;
+}
+.brand-logo {
+    font-family:'Open Sans', sans-serif;
+
+}
+
+.logo {
+    padding: 5px;
 }
