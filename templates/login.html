@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content%}
+
+    <div class="row">
+        <div class="col s12 m8 offset-m2">
+            <div class="card">
+                        <div class="card-image">
+                        <img src="static/images/register_pic.jpg">
+                        <span class="card-title">Log in </span>
+                        </div>
+            <form class="card-content" method="POST" action= "{{ url_for('login') }}">
+
+                <!-- email -->
+                <div class="row">
+                    <div class="input-field col s12">
+                    <input id="email" name="email" type="email" class="validate" required>
+                    <label for="email">Email</label>
+                    </div>
+                </div>
+                <!-- password -->
+                <div class="row">
+                    <div class="input-field col s12">
+                    <input id="password" name="password" type="password" class="validate" pattern="^[a-zA-Z0-9]{2,15}$" minlength="4" maxlength="15" required>
+                    <label for="password">Password</label>
+                    </div>
+                </div>
+                
+                
+                <!-- login button-->
+                <div class="row">
+                    <button type="submit" class= "col s12 btn-large grey darken-2">
+                        Log in
+                    </button>
+                </div>
+            </form>  
+            <div class="row">
+                <div class="col s12">
+                    <p class="center-align">
+                        New here?
+                        <a href="{{ url_for('register') }}" class= "btn-large grey darken-2">Register account</a>
+                    </p>
+                </div>
+            </div>
+    </div>
+</div>
+
+{% endblock %}
