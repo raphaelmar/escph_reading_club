@@ -20,17 +20,20 @@
         <nav>
             <div class="nav-wrapper">
             <a href= "https://europaskolen.sag.dk/" target="_blank">
-            <img src="static/images/european_logo.png" width="60" height="60" class= "logo" alt="european school logo"></a>
+            <img src="/static/images/european_logo.png" width="60" height="60" class= "logo" alt="european school logo"></a>
             <a href="{{ url_for('get_reviews') }}" class="brand-logo">ESCPH Reading Club</a>
             
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('get_reviews') }}">Home</a></li>
-                <li><a href="{{ url_for('profile', email=session['user']) }}">Profile</a></li>
-                <li><a href="#">New review</a></li>
-                <li><a href="#">Log Out</a></li>
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
+                {% if session.user%}
+                    <li><a href="{{ url_for('profile', email=session['user']) }}">Profile</a></li>
+                    <li><a href="#">New review</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                {% endif %}
                 
             </ul>
             </div>
@@ -40,11 +43,14 @@
         <ul class="sidenav" id="mobile-demo">
                 <li><h5 class="center-align">ESCPH Reading Club</h5></li>
                 <li><a href="{{ url_for('get_reviews') }}">Home</a></li>
-                <li><a href="{{ url_for('profile', email=session['user']) }}">Profile</a></li>
-                <li><a href="#">New review</a></li>
-                <li><a href="#">Log Out</a></li>
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
-                <li><a href="{{ url_for('register') }}">Register</a></li>
+                {% if session.user%}
+                    <li><a href="{{ url_for('profile', email=session['user']) }}">Profile</a></li>
+                    <li><a href="#">New review</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
+                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                {% endif %}
         </ul>
     </header>
     <section>
