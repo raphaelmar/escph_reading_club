@@ -17,3 +17,8 @@ nav {
     line-height: 2;
     color: whitesmoke;
 }
+
+.headers {
+    font-family:'Open Sans', sans-serif;
+    font-weight: bold;
+}

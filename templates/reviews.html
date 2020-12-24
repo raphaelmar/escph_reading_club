@@ -3,36 +3,29 @@
 
     
 
-    {% for review in reviews %}
-        {{ review.review_title }}<br>
-        {{ review.review_author }}<br>
-        {{ review.review_genre }}<br>
-        {{ review.review_language }}<br>
-        {{ review.review_text }}<br>
-    {% endfor %}
-
-
   <ul class="collapsible">
-    <li>
-      <div class="collapsible-header"><i class="fas fa-book">Book Title</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      {% for review in reviews %}
+    <li class="active">
+      <div class="collapsible-header"><i class="fas fa-book"></i><span class="headers">Book Title</span></div>
+      <div class="collapsible-body"><span>{{ review.review_title }}</span></div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="fas fa-feather">Author</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-header"><i class="fas fa-feather"></i><span class="headers">Author</span></div>
+      <div class="collapsible-body"><span>{{ review.review_author }}</span></div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="fas fa-question-circle"></i>Genre</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-header"><i class="fas fa-question-circle"></i><span class="headers"> Genre</span></div>
+      <div class="collapsible-body"><span>{{ review.review_genre }}</span></div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="fas fa-language">Language</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-header"><i class="fas fa-language"></i><span class="headers">Language</span></div>
+      <div class="collapsible-body"><span>{{ review.review_language }}</span></div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="fas fa-user-edit"></i>Review</i></div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-header"><i class="fas fa-user-edit"></i><span class="headers">Review</span></div>
+      <div class="collapsible-body"><span>{{ review.review_text }}</span></div>
     </li>
+    {% endfor %}
   </ul>
         
 
