@@ -55,7 +55,7 @@ def register():
 @app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
-        #check if email already exists in db
+        # check if email already exists in db
         existing_user = mongo.db.users.find_one(
             {"email": request.form.get("email").lower()})
 
@@ -69,9 +69,9 @@ def login():
                 return redirect(url_for(
                     "profile", email=session["user"]))
             else:
-                #invalid password match
+                # invalid password match
                 flash("Incorrect email and/or password")
-                return redirect (url_for("login"))
+                return redirect(url_for("login"))
 
         else:
             # email doesn't exist
@@ -115,7 +115,6 @@ def add_review():
         flash("Review Succesfully added")
         return redirect(url_for("get_reviews"))
 
-
     genres = mongo.db.genres.find().sort("genre_name", 1)
     languages = mongo.db.languages.find().sort("language_name", 1)
 
@@ -125,13 +124,25 @@ def add_review():
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
-    review = mongo.db.reviews.find_one({"_id": ObjectId()})
+    if request.method == "POST":
+        submit = {
+            "review_title": request.form.get("review_title"),
+            "review_author": request.form.get("review_author"),
+            "language_name": request.form.get("language_name"),
+            "genre_name": request.form.get("genre_name"),
+            "review_text": request.form.get("review_text"),
+            "created_by": session["user"]
 
+        }
+        mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
+        flash("Review succesfully updated")
+
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     genres = mongo.db.genres.find().sort("genre_name", 1)
     languages = mongo.db.languages.find().sort("language_name", 1)
 
     return render_template(
-        "edit_review.html", genres=genres, languages=languages, review=review)
+        "review.html", genres=genres, languages=languages, review=review)
 
 
 
