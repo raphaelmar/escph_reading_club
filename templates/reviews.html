@@ -1,13 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
 
-    
+    <h3 class="center-align">All book reviews</h3>
 
   <ul class="collapsible">
       {% for review in reviews %}
-    <li class="active">
-      <div class="collapsible-header"><i class="fas fa-book"></i><span class="headers">Book Title</span></div>
-      <div class="collapsible-body"><span>{{ review.review_title }}</span></div>
+    <li >
+      <div><p class="headers" id="book_title"><i class="fas fa-book"></i><span id="book_name">{{ review.review_title }}</span></p></div>
     </li>
     <li>
       <div class="collapsible-header"><i class="fas fa-feather"></i><span class="headers">Author</span></div>
@@ -23,7 +22,9 @@
     </li>
     <li>
       <div class="collapsible-header"><i class="fas fa-user-edit"></i><span class="headers">Review</span></div>
-      <div class="collapsible-body"><span>{{ review.review_text }}</span></div>
+      <div class="collapsible-body"><span>{{ review.review_text }}</span>
+                                    <p><em>{{ review.created_by }}</em> </p></div></div>
+
     </li>
     {% endfor %}
   </ul>
