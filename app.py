@@ -123,6 +123,18 @@ def add_review():
         "add_review.html", genres=genres, languages=languages)
 
 
+@app.route("/edit_review/<review_id>", methods= ["GET", "POST"])
+def edit_review(review_id):
+    review = mongo.db.reviews.find_one({"_id": ObjectId()})
+
+    genres = mongo.db.genres.find().sort("genre_name", 1)
+    languages = mongo.db.languages.find().sort("language_name", 1)
+
+    return render_template(
+        "edit_review.html", genres=genres, languages=languages, review=review)
+
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
