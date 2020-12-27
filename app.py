@@ -89,11 +89,12 @@ def login():
 @app.route("/profile/<email>", methods=["GET", "POST"])
 def profile(email):
     # grab the sessions user's email form db
+    reviews = mongo.db.reviews.find()
     email = mongo.db.users.find_one(
         {"email": session["user"]})["email"]
 
     if session["user"]:
-        return render_template("profile.html", email=email)
+        return render_template("profile.html", email=email, reviews=reviews)
 
     return redirect(url_for("login"))
 

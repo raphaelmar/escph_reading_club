@@ -1,14 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h3 class="center-align">Add task</h3>
+    <h3 class="center-align">Add review</h3>
 
     <div class="row">
-        <form class="col s12" method="POST" action=" {{ url_for('add_review') }}">
+        <form class="col s12 grey lighten-5" method="POST" action=" {{ url_for('add_review') }}">
             <!-- book title -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-book"></i>
                     <input id="review_title" name="review_title" minlength="1" maxlength="50"
                     type="text" class="validate" required>
                     <label for="review_title">Book Title</label>
@@ -17,7 +16,6 @@
             <!-- author name -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-feather"></i>
                     <input id="review_author" name="review_author" minlength="1" maxlength="50"
                     type="text" class="validate" required>
                     <label for="review_author">Author</label>
@@ -26,7 +24,6 @@
             <!-- language selection -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-language"></i>
                     <select id="language_name" name="language_name" class="validate" required>
                     <option value="" disabled selected>Choose language</option>
                         {% for language in languages %}
@@ -42,7 +39,6 @@
             <div class="row">
 
                 <div class="input-field col s12">
-                    <i class="fas fa-question-circle"></i>
                     <select id="genre_name" name="genre_name" class="validate" required>
                     <option value="" disabled selected>Choose genre</option>
                         {% for genre in genres %}
@@ -56,7 +52,6 @@
             <!-- review input box -->
             <div class="row">
                 <div class="input-field col s12">
-                    <i class="fas fa-user-edit"></i>
                     <textarea id="review_text" name="review_text" minlength="5" maxlength="500" class="materialize-textarea validate" required></textarea>
                     <label for="review_text">Your review</label>
                 </div>
@@ -64,8 +59,8 @@
             <!-- add review button -->
             <div class="row">
                 <div class="col s12 center-align">
-                    <button class="btn-large deep-orange lighten-1" type="submit">
-                <i class="fas fa-plus-circle"></i>Add review</i>
+                    <button id="add_review_btn" class="btn large deep-orange lighten-1" type="submit">
+                <i class="fas fa-plus-circle"></i> Add review
                 </div>
                     </button>
             </div>
