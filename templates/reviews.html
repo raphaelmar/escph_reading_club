@@ -33,6 +33,9 @@
             <a href="{{ url_for('delete_review', review_id=review._id) }}" class="btn-small orange darken-4 ">Delete</a><a href="{{ url_for('edit_review', review_id=review._id) }}" class="btn-small light-green darken-1 ">Edit</a></p></div>
             {% endif %}
         </li>
+        <li >
+        <div><p class="headers" id="book_title"><i class="fas fa-heart"></i><span id="like_span">{{ review.like }}</span><button class="btn-small pink accent-1" id="like_button"><a href="{{ url_for('like', review_id=review._id) }}">Like</a></button></span>
+        </li>
         <li>
         <div class="collapsible-header"><i class="fas fa-feather"></i><span class="headers">Author</span></div>
         <div class="collapsible-body"><span>{{ review.review_author }}</span></div>
@@ -51,6 +54,7 @@
                                         <p><em>{{ review.created_by }}</em> </p></div></div>
 
         </li>
+        
     {% endfor %}
   </ul> 
 

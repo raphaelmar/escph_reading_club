@@ -40,3 +40,20 @@ nav {
 #add_review {
     background-color: #e2dee0;
 }
+
+#like_button {
+    background-color: bisque;
+    margin-left: 1em;
+    
+
+}
+
+#like_span {
+    padding-left: 1em;
+}
+
+a {
+    color: white;
+
+}
+

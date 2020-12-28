@@ -116,7 +116,8 @@ def add_review():
             "language_name": request.form.get("language_name"),
             "genre_name": request.form.get("genre_name"),
             "review_text": request.form.get("review_text"),
-            "created_by": session["user"]
+            "created_by": session["user"],
+            "like": request.form.get("like", 0),
 
         }
         mongo.db.reviews.insert_one(review)
@@ -160,7 +161,17 @@ def delete_review(review_id):
     return redirect(url_for("get_reviews"))
 
 
+@app.route("/like/<review_id>")
+def like(review_id):
+    mongo.db.reviews.find_one_and_update(
+        {"_id": ObjectId(review_id)},
+        {"$inc": {"like": 1}}
+     )
+    return redirect(url_for("get_reviews"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
+
