@@ -1,85 +1,78 @@
 {% extends "base.html" %}
 {% block content %}
-
-    <h3 class="center-align">Edit review</h3>
-
-    <div class="row">
-        <form class="col s12" method="POST" action=" {{ url_for('edit_review', review_id=review._id) }} ">
-            <!-- book title -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-book"></i>
-                    <input id="review_title" name="review_title" minlength="1" maxlength="50"
-                     value="{{ review.review_title }}" type="text" class="validate" required>
-                    <label for="review_title">Book Title</label>
-                </div>
-            </div>
-            <!-- author name -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-feather"></i>
-                    <input id="review_author" name="review_author" minlength="1" maxlength="50"
-                    value= "{{ review.review_author }}" type="text" class="validate" required>
-                    <label for="review_author">Author</label>
-                </div>
-            </div>
-            <!-- language selection -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-language"></i>
-                    <select id="language_name" name="language_name" class="validate" required>
-                    <option value="" disabled>Choose language</option>
-                        {% for language in languages %}
-                            {% if language.language_name == review.language_name %}
-                                <option value="{{ language.language_name }}" selected>{{ language.language_name }}</option>
-                            {% else %}
-                                <option value="{{ language.language_name }}">{{ language.language_name }}</option>
-                            {% endif %}
-                        {% endfor %}
-                        
-                        </select>
-                    <label for="language_name">Language</label>
-                </div>
-            </div>
-            <!-- genre selection -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-language"></i>
-                    <select id="genre_name" name="genre_name" class="validate" required>
-                    <option value="" disabled>Choose genre</option>
-                        {% for genre in genres %}
-                            {% if genre.genre_name == review.genre_name %}
-                                <option value="{{ genre.genre_name }}" selected>{{ genre.genre_name }}</option>
-                            {% else %}
-                                <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
-                            {% endif %}
-                        {% endfor %}
-                        
-                        </select>
-                    <label for="genre_name">Genre</label>
-                </div>
-            </div>
-            <!-- review input box -->
-            <div class="row">
-                <div class="input-field col s12">
-                    <i class="fas fa-user-edit"></i>
-                    <textarea id="review_text" name="review_text" minlength="5" maxlength="500" class="materialize-textarea validate" required>{{ review.review_text }}</textarea>
-                    <label for="review_text">Your review</label>
-                </div>
-            </div>
-            <!-- edit and cancel review buttons -->
-            <div class="row">
-                <div class="col s12 center-align">
-                    <a href="{{ url_for('get_reviews') }}"class="btn-large pink darken-4">
-                        Cancel <i class="fas fa-times-circle left"></i>
-                    </a>
-                    <button class="btn-large light-green darken-1" type="submit">
-                <i class="fas fa-edit"></i>Edit review</i>
-                </div>
-                    </button>
-            </div>
-        </form>
-    </div>
-        
-
+<h3 class="center-align">Edit review</h3>
+<div class="row">
+   <form class="col s12" method="POST" action=" {{ url_for('edit_review', review_id=review._id) }} ">
+      <!-- book title -->
+      <div class="row">
+         <div class="input-field col s12">
+            <i class="fas fa-book"></i>
+            <input id="review_title" name="review_title" minlength="1" maxlength="50"
+               value="{{ review.review_title }}" type="text" class="validate" required>
+            <label for="review_title">Book Title</label>
+         </div>
+      </div>
+      <!-- author name -->
+      <div class="row">
+         <div class="input-field col s12">
+            <i class="fas fa-feather"></i>
+            <input id="review_author" name="review_author" minlength="1" maxlength="50"
+               value= "{{ review.review_author }}" type="text" class="validate" required>
+            <label for="review_author">Author</label>
+         </div>
+      </div>
+      <!-- language selection -->
+      <div class="row">
+         <div class="input-field col s12">
+            <i class="fas fa-language"></i>
+            <select id="language_name" name="language_name" class="validate" required>
+               <option value="" disabled>Choose language</option>
+               {% for language in languages %}
+               {% if language.language_name == review.language_name %}
+               <option value="{{ language.language_name }}" selected>{{ language.language_name }}</option>
+               {% else %}
+               <option value="{{ language.language_name }}">{{ language.language_name }}</option>
+               {% endif %}
+               {% endfor %}
+            </select>
+            <label for="language_name">Language</label>
+         </div>
+      </div>
+      <!-- genre selection -->
+      <div class="row">
+         <div class="input-field col s12">
+            <i class="fas fa-language"></i>
+            <select id="genre_name" name="genre_name" class="validate" required>
+               <option value="" disabled>Choose genre</option>
+               {% for genre in genres %}
+               {% if genre.genre_name == review.genre_name %}
+               <option value="{{ genre.genre_name }}" selected>{{ genre.genre_name }}</option>
+               {% else %}
+               <option value="{{ genre.genre_name }}">{{ genre.genre_name }}</option>
+               {% endif %}
+               {% endfor %}
+            </select>
+            <label for="genre_name">Genre</label>
+         </div>
+      </div>
+      <!-- review input box -->
+      <div class="row">
+         <div class="input-field col s12">
+            <i class="fas fa-user-edit"></i>
+            <textarea id="review_text" name="review_text" minlength="5" maxlength="500" class="materialize-textarea validate" required>{{ review.review_text }}</textarea>
+            <label for="review_text">Your review</label>
+         </div>
+      </div>
+      <!-- edit and cancel review buttons -->
+      <div class="row">
+         <div class="col s12 center-align">
+            <a href="{{ url_for('get_reviews') }}" class="btn-large pink darken-4">
+            Cancel <i class="fas fa-times-circle left"></i>
+            </a>
+            <button class="btn-large light-green darken-1" type="submit">
+            <i class="fas fa-edit"></i>Edit review</button>
+         </div>
+      </div>
+   </form>
+</div>
 {% endblock %}

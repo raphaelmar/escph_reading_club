@@ -44,7 +44,13 @@ nav {
 #like_button {
     background-color: bisque;
     margin-left: 1em;
-    
+}
+ 
+#heart {
+    color: #ff7043;
+    font-size: 1.5em;
+    padding-left: 2em;
+    text-shadow: #8b8f77;
 
 }
 
@@ -59,24 +65,13 @@ a {
  
 
 /* Float cancel and delete buttons and add an equal width */
-.cancelbtn, .deletebtn {
+.deletebtn {
   float: left;
   width: 50%;
 }
 
-/* Add a color to the cancel button */
-.cancelbtn {
-  background-color: #ccc;
-  color: black;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
 
-/* Add a color to the delete button */
+/* the delete button */
 .deletebtn {
   background-color: #ff7043;
   color: black;
@@ -88,22 +83,22 @@ a {
   opacity: 0.9;
 }
 
-/* Add padding and center-align text to the container */
+/* container */
 .container {
   padding: 16px;
   text-align: center;
 }
 
-/* The Modal (background) */
+/* modal*/
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 80%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  width: 80%;
+  height: 100%;
+  overflow: auto;
   background-color: #474e5d;
   padding-top: 50px;
 }
@@ -111,9 +106,9 @@ a {
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  margin: 5% auto 15% auto;
   border: 1px solid #888;
-  width: 60%; /* Could be more or less, depending on screen size */
+  width: 60%;
 }
 
 /* Style the horizontal ruler */
@@ -147,7 +142,7 @@ hr {
 
 /* Change styles for cancel button and delete button on extra small screens */
 @media screen and (max-width: 300px) {
-  .cancelbtn, .deletebtn {
+ .deletebtn {
     width: 100%;
   }
 }

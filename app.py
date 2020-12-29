@@ -106,7 +106,7 @@ def logout():
     session.pop("user")
     return redirect(url_for("login"))
 
-
+    # create and add reviews
 @app.route("/add_review", methods=["GET", "POST"])
 def add_review():
     if request.method == "POST":
@@ -130,7 +130,7 @@ def add_review():
     return render_template(
         "add_review.html", genres=genres, languages=languages)
 
-
+    #edit reviews
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
     if request.method == "POST":
@@ -153,14 +153,14 @@ def edit_review(review_id):
     return render_template(
         "edit_review.html", genres=genres, languages=languages, review=review)
 
-
+    #delete reviews
 @app.route("/delete_review/<review_id>")
 def delete_review(review_id):
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
     flash("Review successfully deleted")
     return redirect(url_for("get_reviews"))
 
-
+    #like reviews
 @app.route("/like/<review_id>")
 def like(review_id):
     mongo.db.reviews.find_one_and_update(
