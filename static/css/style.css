@@ -64,25 +64,6 @@ a {
 }
  
 
-/* Float cancel and delete buttons and add an equal width */
-.deletebtn {
-  float: left;
-  width: 50%;
-}
-
-
-/* the delete button */
-.deletebtn {
-  background-color: #ff7043;
-  color: black;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-}
-
 /* container */
 .container {
   padding: 16px;
@@ -138,11 +119,4 @@ hr {
   content: "";
   clear: both;
   display: table;
-}
-
-/* Change styles for cancel button and delete button on extra small screens */
-@media screen and (max-width: 300px) {
- .deletebtn {
-    width: 100%;
-  }
 }
