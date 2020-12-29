@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<h3 style= "padding:0.5em"  class="center-align"> Welcome Bienvenue Willlkommen Velkommen</h3>
+<h3 style= "padding:0.5em"  class="center-align"> Welcome Bienvenue Willkommen Velkommen</h3>
 <div class="center-align">
    <img style= "padding: 0.5em " class="responsive-img" src="/static/images/reading_club.jpg" alt="laptop and book">
 </div>
@@ -49,24 +49,26 @@
    </li>
    <li >
       <div>
-         <p class="headers" id="heart"><i class="fas fa-heart"></i><span id="like_span">{{ review.like }}</span><button class="btn-small pink accent-1" id="like_button"><a href="{{ url_for('like', review_id=review._id) }}">Like</a></button></p>
+      <p class="headers" id="heart"><i class="fas fa-heart"></i><span id="like_span">{{ review.like }}</span><button class="btn-small pink accent-1" id="like_button"><a href="{{ url_for('like', review_id=review._id) }}">Like</a></button></p>
    </li>
    <li>
-   <div class="collapsible-header"><i class="fas fa-feather"></i><span class="headers">Author</span></div>
-   <div class="collapsible-body"><span>{{ review.review_author }}</span></div>
+      <div class="collapsible-header"><i class="fas fa-feather"></i><span class="headers">Author</span></div>
+      <div class="collapsible-body"><span>{{ review.review_author }}</span></div>
    </li>
    <li>
-   <div class="collapsible-header"><i class="fas fa-language"></i><span class="headers">Language</span></div>
-   <div class="collapsible-body"><span>{{ review.language_name }}</span></div>
+      <div class="collapsible-header"><i class="fas fa-language"></i><span class="headers">Language</span></div>
+      <div class="collapsible-body"><span>{{ review.language_name }}</span></div>
    </li>
    <li>
-   <div class="collapsible-header"><i class="fas fa-question-circle"></i><span class="headers">Genre</span></div>
-   <div class="collapsible-body"><span>{{ review.genre_name }}</span></div>
+      <div class="collapsible-header"><i class="fas fa-question-circle"></i><span class="headers">Genre</span></div>
+      <div class="collapsible-body"><span>{{ review.genre_name }}</span></div>
    </li>
    <li>
-   <div class="collapsible-header"><i class="fas fa-user-edit"></i><span class="headers">Review</span></div>
-   <div class="collapsible-body"><span>{{ review.review_text }}</span>
-   <p><em>{{ review.created_by }}</em> </p></div>
+      <div class="collapsible-header"><i class="fas fa-user-edit"></i><span class="headers">Review</span></div>
+      <div class="collapsible-body">
+         <span>{{ review.review_text }}</span>
+         <p><em>{{ review.created_by }}</em> </p>
+      </div>
    </li>
    <hr>
    <br>
