@@ -1,45 +1,47 @@
-<img src="https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png" style="margin: 0;">
+# European School of Copenhagen Reading club
 
-Welcome raphaelmar,
+The European School of Copenhagen is a multicultural and multilingual school, where students are encouraged to develop skills that allow them to thrive in a diverse environment by promoting their use of languages. Reading is an essential part of this process. The aim of the Reading Club is to provide students with a place where they can share a review of their favourite stories with their peers and can search for new reading ideas based on their peers' positive experience. The site is in English as it is the official communication language of the shcool, but the reviews and the reviewed books can be in the language of their choice, the other official languages of the school being French, German and Danish. 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use.
+## UX
 
-## Gitpod Reminders
+The Reading club is aimed at students who are independent readers and who are able to write a concise book review, aged 10 to 18. Visually, the site re-uses the colour code that is used by the school's main website https://europaskolen.sag.dk/ - automatic ! [Europaskolen](https://europaskolen.sag.dk/). It is simple, clear and clutter free, focusing on the main element that are the review cards.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### User stories
 
-`python3 -m http.server`
+As a user of the of the Reading club:
+* I can enter the basic details of the book I have read (title, author, language, genre) so that it can be easily identified by other users.
+* I can write a review of the book I have enjoyed so that it is shared with other users and they are encouraged to read the book through my review.
+* I can edit and delete my own reviews so that I can amend any mistakes or completely remove a review if I do not want it on the Club any longer.
+* I can read other users' reviews so that I can discover new stories and be encouraged to read them. 
+* I can "like" other users' reviews to express my appreciation of the review and/or the book reviewed.
+* I can search the bank of reviews using keywords if I am looking for something in particular (books in French only for example).
+* I can be a registered user and log in if I want to write and publish my own reviews or I can be a non-registered user if I just want to read reviews and "like" them.
 
-A blue button should appear to click: *Make Public*,
+### Wireframes
 
-Another blue button should appear to click: *Open Browser*.
+![Home page] (/static/images/ESCPHRC_home.png)
+![Review card (/static/images/review_card.png)
+![User's own review] (/static/images/user_own_review.png)
+![Log in mobile view] (/static/images/login_mobile_view.png)
+![Log in tablet view with side navbar] (/static/images/login_tablet_sidenav.png)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
 
-A blue button should appear to click: *Make Public*,
 
-Another blue button should appear to click: *Open Browser*.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
 
-## Updates Since The Instructional Video
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+## Features
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Technologies used
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Testing
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+## Deployment
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## Credits
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
---------
-
-Happy coding!
+### Contents
+### Media
+### Acknowledgements
