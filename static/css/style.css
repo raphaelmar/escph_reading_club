@@ -24,17 +24,17 @@ nav {
 }
 
 #book_title {
-    color: #ff7043;
-    font-size: 1.5em;
-    padding-left: 2em;
-    text-shadow: #8b8f77;
+    color: #f4511e;
+    font-size: 3.5vw;
+    padding-left: 0.5em;
+    
 
 }
 
 #book_name {
-    padding-left: 2em;
-    padding-right: 2em;
-    text-shadow: #8b8f77;
+    padding-left: 1em;
+    padding-right: 1em;
+    
 }
 
 #add_review {
@@ -47,15 +47,16 @@ nav {
 }
  
 #heart {
-    color: #ff7043;
-    font-size: 1.5em;
-    padding-left: 2em;
-    text-shadow: #8b8f77;
+    color: #f4511e ;
+    font-size: 3vw;
+    padding-left: 1em;
+    
 
 }
 
 #like_span {
     padding-left: 1em;
+    padding-right: 1em;
 }
 
 a {

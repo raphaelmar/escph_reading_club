@@ -1,6 +1,6 @@
 import os
 from flask import (
-    Flask, flash, render_template, 
+    Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
@@ -130,7 +130,7 @@ def add_review():
     return render_template(
         "add_review.html", genres=genres, languages=languages)
 
-    #edit reviews
+    # edit reviews
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
     if request.method == "POST":
@@ -153,14 +153,14 @@ def edit_review(review_id):
     return render_template(
         "edit_review.html", genres=genres, languages=languages, review=review)
 
-    #delete reviews
+    # delete reviews
 @app.route("/delete_review/<review_id>")
 def delete_review(review_id):
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
     flash("Review successfully deleted")
     return redirect(url_for("get_reviews"))
 
-    #like reviews
+    # like reviews
 @app.route("/like/<review_id>")
 def like(review_id):
     mongo.db.reviews.find_one_and_update(
@@ -174,4 +174,3 @@ if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
             debug=True)
-

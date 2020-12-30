@@ -10,8 +10,7 @@
    </div>
 </div>
 <h3 class="center-align">My reviews</h3>
-<ul class="collapsible">
-   {% for review in reviews %}
+{% for review in reviews %}
    {% if session.user|lower == review.created_by|lower %}
    <div id="id01" class="modal">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -25,6 +24,7 @@
          </div>
       </form>
    </div>
+<ul class="collapsible">
    <li >
       <div class="row"></div>
       <div class="col s12"></div>

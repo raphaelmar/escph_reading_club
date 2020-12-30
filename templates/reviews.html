@@ -14,17 +14,16 @@
             <label for="query">Search all reviews</label>
          </div>
          <div class="col s12 m4">
-            <a href="{{ url_for('get_reviews') }}" class="grey btn text-shadow">Reset</a>
-            <button type="submit" class="light-green darken-1 btn text-shadow">
-            <i class="fas fa-search left"></i> Search
+            <a href="{{ url_for('get_reviews') }}" class="grey btn-small text-shadow">Reset</a>
+            <button type="submit" class="light-green darken-1 btn-small text-shadow">
+            <i class="fas fa-search left"></i>Search
             </button>
          </div>
       </div>
    </form>
 </div>
-<ul class="collapsible">
-   {% for review in reviews %}
-   <div id="id01" class="modal">
+{% for review in reviews %}
+<div id="id01" class="modal">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
       <form class="modal-content" action="/action_page.php">
          <div class="container">
@@ -36,20 +35,22 @@
          </div>
       </form>
    </div>
+<ul class="collapsible">
+   
+   
    <li >
       <div class="row">
          <div class="col s12">
             <p class="headers" id="book_title"><i class="fas fa-book"></i><span id="book_name">{{ review.review_title }}</span>
                {% if session.user|lower == review.created_by|lower %}
                <a href="{{ url_for('edit_review', review_id=review._id) }}" class="btn-small light-green darken-1 ">Edit</a>
-               <button onclick="document.getElementById('id01').style.display='block'" class="btn-small orange darken-4 ">Delete</button>
+               <button onclick="document.getElementById('id01').style.display='block'" class="btn-small orange darken-4 ">Delete</button></p>
          </div>
       </div>
       {% endif %}
    </li>
    <li >
-      <div>
-      <p class="headers" id="heart"><i class="fas fa-heart"></i><span id="like_span">{{ review.like }}</span><button class="btn-small pink accent-1" id="like_button"><a href="{{ url_for('like', review_id=review._id) }}">Like</a></button></p>
+      <p class="headers" id="heart"><i class="fas fa-heart"></i><span id="like_span">{{ review.like }}</span><a href="{{ url_for('like', review_id=review._id) }}" class="btn-small pink accent-1">Like</a></p>
    </li>
    <li>
       <div class="collapsible-header"><i class="fas fa-feather"></i><span class="headers">Author</span></div>
@@ -69,10 +70,9 @@
          <span>{{ review.review_text }}</span>
          <p><em>{{ review.created_by }}</em> </p>
       </div>
-   </li>
-   <hr>
-   <br>
-   <hr>
+   
+   
    {% endfor %}
 </ul>
+
 {% endblock %}
