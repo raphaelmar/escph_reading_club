@@ -1,6 +1,6 @@
 # European School of Copenhagen Reading club
 
-The European School of Copenhagen is a multicultural and multilingual school, where students are encouraged to develop skills that allow them to thrive in a diverse environment by promoting their use of languages. Reading is an essential part of this process. The aim of the Reading Club is to provide students with a place where they can share a review of their favourite stories with their peers and can search for new reading ideas based on their peers' positive experiences to promote reading. The site is in English as it is the official communication language of the shcool, but the reviews and the reviewed books can be in the language of their choice, the other official languages of the school being French, German and Danish. 
+The European School of Copenhagen is a multicultural and multilingual school, where students are encouraged to develop skills that allow them to thrive in a diverse environment by promoting their use of languages. Reading is an essential part of this process. The aim of the Reading Club is to provide students with a place where they can share a review of their favourite stories with their peers and can search for new reading ideas based on their peers' positive experiences to promote reading. The site is in English as it is the official communication language of the school, but the reviews and the reviewed books can be in the language of their choice, the other official languages of the school being French, German and Danish. 
 
 ## UX
 
@@ -48,11 +48,14 @@ As a user of the of the Reading club:
 
 ## Technologies used
 
-* HTML
-* CSS
+* HTML5
+* CSS3
 * [Python](https://www.python.org/)
-* [Flask](https://flask.palletsprojects.com/en/1.1.x/) (micro framework used for jinja templates and erkzueg toolkit)
+* [Flask](https://flask.palletsprojects.com/en/1.1.x/) (micro framework used for jinja templates and werkzeug toolkit)
 * Javascript (opening and closing of delete modal)
+* [Google Fonts](https://fonts.google.com/) (Open Sans)
+* [Font Awesome](https://fontawesome.com/) (all icons)
+* [Materialize](https://materializecss.com/) (overall design of website)
 * [JQuery](https://jquery.com/) (triggering sidenav bar, collapsible and forms)
 * [Github](https://github.com/) (code hosting platform for version control)
 * [Gitpod](https://gitpod.io/) (development environment) 
@@ -67,17 +70,48 @@ HTML has been validated using [W3 validator](https://validator.w3.org/) and form
 CSS has been validated using [W3 CSS validator](http://jigsaw.w3.org/css-validator/validator).
 Javascript code has been validated using[JSHINT](https://jshint.com/)
 Python code has be validated using [PEP8](http://pep8online.com/)
+Lightouse testing returned positive results (all above 90%)
 
 * Functionalities:
 
-The following functionalities have been tested and different browsers(Safari, Chrome, Edge, Firefox) and screen sizes (laptop, tablet and mobile): accessing home page, logging in/out, registering, reading, creating, liking updating and deleting reviews. They all work. In terms of display, the site is usable on all formats, even though the display of buttons on mobile version is not as pleasing, it remains usable. I have not been able to fix this issue at this point for lack of time.
+The following functionalities have been tested on different browsers(Safari, Chrome, Edge, Firefox) and screen sizes (laptop, tablet and mobile): accessing home page, navigating through all pages of the site using navbars, logging in/out, registering, reading, creating, liking, updating and deleting reviews. No problems have been found with any of those functionalities.  In terms of display, the site is usable on all formats, even though the display of buttons on mobile version is not as pleasing, it remains usable. I have not been able to fix this issue at this point for lack of time.
 
+## Deployment in heroku
 
+After creating the app and the MongoDB database.
+In terminal:
 
-## Deployment
+* pip 3 freeze --local > requirements.text
+*echo web: python app.py > Procfile
+
+In Heroku:
+* create a new app (choose name and region)
+* choose the deployment method = Connect to Github
+* select this repository: raphaelmar/escph_reading_club
+* Click connect
+* in Settings, click reveal config Vars and enter the following: IP, PORT, SECRET KEY, MONGO_URI, MONGODB_Name
+
+In terminal:
+* Git add/commit/push requirements.txt and Procfile files
+
+In Heroku:
+* click enable automatic deploys
 
 ## Credits
 
-### Contents
 ### Media
+
+The Wireframes were created using [Balsamiq](https://balsamiq.com/)
+The 2 images used on the site are by DariuszSankowski and SCY , they were obtained from [Pixabay](https://pixabay.com/)
+
 ### Acknowledgements
+
+* The main structure of this site is based on the code provided by Tim Nelson for the Task Manager mini-project presented in the Data centric module of the Full stack Web Developer course form Code Institute.
+* The code for the modal used for the delete functionality is based on [Delete Modal](https://www.w3schools.com/howto/howto_css_delete_modal.asp)
+
+### Thank you
+
+* To Everyone at Code Institute for their patience!
+* To the dedicated team of tutors who are always helpful.
+* To my mentor Reuben Ferrante for making time for me outside his timetabled hours.
+
